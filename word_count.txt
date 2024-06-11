@@ -1,0 +1,15 @@
+def count_word_occurrences(filename):
+    word_counts = {}
+    with open(filename, 'r') as file:
+        for line in file:
+            words = line.strip().lower().split()
+            for word in words:
+                word_counts[word] = word_counts.get(word, 0) + 1
+
+    sorted_word_counts = sorted(word_counts.items())
+
+    for word, count in sorted_word_counts:
+        print(f"{word}: {count}")
+        
+file_name =input("Enter a file name :")
+count_word_occurrences(file_name)
